@@ -1,7 +1,10 @@
 <template>
   <div class="cardContainer">
     <a v-bind:href="card.url" v-for="card in projectList">
-      <div v-for="card in projectList" ref="cardAnimate" class="cardID"></div>
+      <div ref="cardAnimate" class="cardID">
+        <h1>{{ card.name }}</h1>
+        <p>{{ card.url }}</p>
+      </div>
     </a>
 
   </div>
@@ -19,9 +22,44 @@ export default {
     return {
       projectList: [
         {
-          name: "gambling",
-          isHovering: false,
-          url: "http://idonot.tk"
+          name: "GAMBLING",
+          url: "http://gambling.idonot.tk"
+        },{
+          name: " ",
+          url: " "
+        },{
+          name: " ",
+          url: " "
+        },{
+          name: " ",
+          url: " "
+        },{
+          name: " ",
+          url: " "
+        },{
+          name: " ",
+          url: " "
+        },{
+          name: " ",
+          url: " "
+        },{
+          name: " ",
+          url: " "
+        },{
+          name: " ",
+          url: " "
+        },{
+          name: " ",
+          url: " "
+        },{
+          name: " ",
+          url: " "
+        },{
+          name: " ",
+          url: " "
+        },{
+          name: " ",
+          url: " "
         }
       ]
     }
@@ -39,25 +77,29 @@ export default {
     grid-template-rows: repeat(3, 30.6vh);
     grid-gap: 1vw 1vw;
 
+    a {
+      text-decoration: none;
+    }
+
     .cardID {
       opacity: 0;
       height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: white;
+      border-radius: 10px;
+      color: black;
+
       &:hover {
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
       }
-      background-color: white;
-      border-radius: 10px;
+
+      h1 {
+        border-right: 3px solid black;
+        padding-right: 8px;
+        margin-right: 6px;
+      }
     }
   }
 </style>
-
-<!-- .add({
-  targets: ".cardID",
-  translateX: [150, 0],
-  translateY: [150, 0],
-  opacity: 1,
-  delay: function(el, i) {return anime.random(1, 20) * 150 },
-  duration: 150,
-  easing: 'linear',
-  offset: "-=1000"
-})-->
