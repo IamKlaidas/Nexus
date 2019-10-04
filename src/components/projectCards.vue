@@ -1,12 +1,9 @@
 <template>
   <div class="cardContainer">
-    <div v-for="card in projectList" ref="cardAnimate" class="cardID" v-bind:style = "{
-      'box-shadow': card.isHovering ? card.shadow : card.def
-    }"
-    @mouseover = "card.isHovering = true"
-    @mouseleave = "card.isHovering = false">
+    <a v-bind:href="card.url" v-for="card in projectList">
+      <div v-for="card in projectList" ref="cardAnimate" class="cardID"></div>
+    </a>
 
-    </div>
   </div>
 </template>
 
@@ -24,63 +21,7 @@ export default {
         {
           name: "gambling",
           isHovering: false,
-          shadow: "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)",
-          def: "0 0px 0px 0 rgba(0, 0, 0, 0.2), 0 0px 0px 0 rgba(0, 0, 0, 0.19)",
-        },{
-          name: "gambling",
-          isHovering: false,
-          shadow: "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)",
-          def: "0 0px 0px 0 rgba(0, 0, 0, 0.2), 0 0px 0px 0 rgba(0, 0, 0, 0.19)",
-        },{
-          name: "gambling",
-          isHovering: false,
-          shadow: "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)",
-          def: "0 0px 0px 0 rgba(0, 0, 0, 0.2), 0 0px 0px 0 rgba(0, 0, 0, 0.19)",
-        },{
-          name: "gambling",
-          isHovering: false,
-          shadow: "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)",
-          def: "0 0px 0px 0 rgba(0, 0, 0, 0.2), 0 0px 0px 0 rgba(0, 0, 0, 0.19)",
-        },{
-          name: "gambling",
-          isHovering: false,
-          shadow: "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)",
-          def: "0 0px 0px 0 rgba(0, 0, 0, 0.2), 0 0px 0px 0 rgba(0, 0, 0, 0.19)",
-        },{
-          name: "gambling",
-          isHovering: false,
-          shadow: "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)",
-          def: "0 0px 0px 0 rgba(0, 0, 0, 0.2), 0 0px 0px 0 rgba(0, 0, 0, 0.19)",
-        },{
-          name: "gambling",
-          isHovering: false,
-          shadow: "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)",
-          def: "0 0px 0px 0 rgba(0, 0, 0, 0.2), 0 0px 0px 0 rgba(0, 0, 0, 0.19)",
-        },{
-          name: "gambling",
-          isHovering: false,
-          shadow: "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)",
-          def: "0 0px 0px 0 rgba(0, 0, 0, 0.2), 0 0px 0px 0 rgba(0, 0, 0, 0.19)",
-        },{
-          name: "gambling",
-          isHovering: false,
-          shadow: "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)",
-          def: "0 0px 0px 0 rgba(0, 0, 0, 0.2), 0 0px 0px 0 rgba(0, 0, 0, 0.19)",
-        },{
-          name: "gambling",
-          isHovering: false,
-          shadow: "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)",
-          def: "0 0px 0px 0 rgba(0, 0, 0, 0.2), 0 0px 0px 0 rgba(0, 0, 0, 0.19)",
-        },{
-          name: "gambling",
-          isHovering: false,
-          shadow: "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)",
-          def: "0 0px 0px 0 rgba(0, 0, 0, 0.2), 0 0px 0px 0 rgba(0, 0, 0, 0.19)",
-        },{
-          name: "gambling",
-          isHovering: false,
-          shadow: "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)",
-          def: "0 0px 0px 0 rgba(0, 0, 0, 0.2), 0 0px 0px 0 rgba(0, 0, 0, 0.19)",
+          url: "http://idonot.tk"
         }
       ]
     }
@@ -98,16 +39,14 @@ export default {
     grid-template-rows: repeat(3, 30.6vh);
     grid-gap: 1vw 1vw;
 
-    div {
-      /* :hover {
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-      } */
-      background-color: white;
-      border-radius: 10px;
-    }
-
     .cardID {
       opacity: 0;
+      height: 100%;
+      &:hover {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      }
+      background-color: white;
+      border-radius: 10px;
     }
   }
 </style>
